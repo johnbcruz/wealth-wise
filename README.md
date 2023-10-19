@@ -1,2 +1,1 @@
-# financial-tracker
-# hello
+# wealth-wise
