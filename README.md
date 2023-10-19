@@ -1,1 +1,1 @@
-# financial-tracker
+# wealth-wise
