@@ -26,3 +26,7 @@ export const GlobalProvider = ({children}) => {
         </GlobalContext.provider>
     )
 }
+
+export const useGlobalContext = () => {
+    return useContext(GlobalContext)
+}
