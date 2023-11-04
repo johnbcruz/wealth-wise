@@ -6,14 +6,15 @@ function Expenses(){
     return(
         <ExpensesStyled>
             <InnerLayout>
-                {/* Add any content you want within the InnerLayout here */}
+                <h1>Display Expenses</h1>
             </InnerLayout>
         </ExpensesStyled>
     )
 }
 
 const ExpensesStyled = styled.div`
-    /* Add any styles you want for ExpensesStyled here */
+    display: flex;
+    overflow: auto;
 `;
 
 export default Expenses;
