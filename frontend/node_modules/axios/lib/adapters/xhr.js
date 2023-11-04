@@ -61,17 +61,8 @@ export default isXHRAdapterSupported && function (config) {
       }
     }
 
-    let contentType;
-
-    if (utils.isFormData(requestData)) {
-      if (platform.isStandardBrowserEnv || platform.isStandardBrowserWebWorkerEnv) {
-        requestHeaders.setContentType(false); // Let the browser set it
-      } else if(!requestHeaders.getContentType(/^\s*multipart\/form-data/)){
-        requestHeaders.setContentType('multipart/form-data'); // mobile/desktop app frameworks
-      } else if(utils.isString(contentType = requestHeaders.getContentType())){
-        // fix semicolon duplication issue for ReactNative FormData implementation
-        requestHeaders.setContentType(contentType.replace(/^\s*(multipart\/form-data);+/, '$1'))
-      }
+    if (utils.isFormData(requestData) && (platform.isStandardBrowserEnv || platform.isStandardBrowserWebWorkerEnv)) {
+      requestHeaders.setContentType(false); // Let the browser set it
     }
 
     let request = new XMLHttpRequest();
