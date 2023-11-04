@@ -6,7 +6,7 @@ function Dashboard() {
     return (
         <DashboardStyled>
             <InnerLayout>
-                <h1>All Transactions</h1>
+                <h1>Display Dashboard/Transactions</h1>
             </InnerLayout>
         </DashboardStyled>
     );
