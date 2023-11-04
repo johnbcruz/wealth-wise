@@ -1,20 +1,23 @@
-import React from 'react';
-import styled from 'styled-components';
-import { InnerLayout } from '../../styles/Layouts';
+import React, { useEffect } from 'react'
+import styled from 'styled-components'
 
-function Income() {
-    return (
+function Income(){
+    return(
         <IncomeStyled>
             <InnerLayout>
                 <h1>Incomes</h1>
+                <div className = "income-content">
+                    <div className = "form-container">
+                    <div className = "incomes"></div>
+                </div>
+            </div>
             </InnerLayout>
         </IncomeStyled>
     )
 }
 
-const IncomeStyled = styled.div`
-    display: flex;
-    overflow: auto;
+const IncomesStyled = styled.div`
+
 `;
 
-export default Income;
+export default Income

@@ -1,20 +1,18 @@
-import React from 'react';
-import styled from 'styled-components';
-import { InnerLayout } from '../../styles/Layouts';
+import React, { useEffect } from 'react'
+import styled from 'styled-components'
 
-function Dashboard() {
-    return (
+function Dashboard(){
+    return(
         <DashboardStyled>
             <InnerLayout>
-                <h1>All Transactions</h1>
+                
             </InnerLayout>
-        </DashboardStyled>
-    );
+            </DashboardStyled>
+    )
 }
 
 const DashboardStyled = styled.div`
-    display: flex;
-    overflow: auto;
+
 `;
 
-export default Dashboard;
+export default Dashboard
