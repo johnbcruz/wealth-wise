@@ -1,20 +1,20 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useEffect } from 'react'
+import styled from 'styled-components'
 import { InnerLayout } from '../../styles/Layouts';
 
-function Income() {
-    return (
-        <IncomeStyled>
+function Income(){
+    return(
+        <IncomesStyled>
             <InnerLayout>
                 <h1>Display Income</h1>
             </InnerLayout>
-        </IncomeStyled>
+        </IncomesStyled>
     )
 }
 
-const IncomeStyled = styled.div`
+const IncomesStyled = styled.div`
     display: flex;
     overflow: auto;
 `;
 
-export default Income;
+export default Income

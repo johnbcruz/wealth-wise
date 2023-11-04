@@ -42,8 +42,8 @@ const NavStyled = styled.nav`
         align-items: center;
         gap: 1rem;
         img{
-            width: 80px;
-            height: 80px;
+            width: 75px;
+            height: 75px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid black;
@@ -60,11 +60,14 @@ const NavStyled = styled.nav`
             display: grid;
             grid-template-columns: 40px auto;
             align-items: center;
-            margin: .6rem 0;
+            margin: .8rem 0;
             font-weight: 500;
             cursor: pointer;
             padding-left: 1rem;
             position: relative;
+            &:hover{
+                background-color: rgba(46, 46, 112, 0.05);
+            }
             i{
                 font-size: 1.4rem;
             }
@@ -72,4 +75,4 @@ const NavStyled = styled.nav`
     }
 `;
 
-export default Navigation
+export default Navigation;
