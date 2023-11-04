@@ -6,7 +6,7 @@ function Income() {
     return (
         <IncomeStyled>
             <InnerLayout>
-                <h1>Incomes</h1>
+                <h1>Display Income</h1>
             </InnerLayout>
         </IncomeStyled>
     )
