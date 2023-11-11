@@ -1,21 +1,15 @@
+import React from 'react'
 import styled from 'styled-components'
-import avatar from '../../img/avatar.png'
+import picture from '../../img/picture.png'
+import { signout } from '../../utils/Icons'
 import { menuItems } from '../../utils/menuItems'
 
 function Navigation({active, setActive}) {
-    
     return (
         <NavStyled>
-            <div className="user-con">
-                <img src={avatar} alt="" />
-                <div className="text">
-                    <h2>User name</h2>
-                    <p>User net worth</p>
-                </div>
-            </div>
             <ul className="menu-items">
-                {menuItems.map((item) => {
-                    return <li
+                {menuItems.map((item) => (
+                    <li
                         key={item.id}
                         onClick={() => setActive(item.id)}
                         className={active === item.id ? 'active': ''}
@@ -23,53 +17,58 @@ function Navigation({active, setActive}) {
                         {item.icon}
                         <span>{item.title}</span>
                     </li>
-                })}
+                ))}
             </ul>
+            <div className="bottom-nav">
+                <div className="user-con">
+                    <img src={picture} alt="" />
+                    <div className="text">
+                        <h2>CoCo</h2>
+                    </div>
+                </div>
+            </div>
         </NavStyled>
     )
 }
 
 const NavStyled = styled.nav`
-    padding: 2rem 1.5rem;
-    width: 300px;
-    height: 100%;
-    border: 3px solid black;
+    padding: 0px 8px;
+    border-right: 3px solid #000000;
     display: flex;
     flex-direction: column;
-    .user-con{
-        height: 100px;
+    justify-content: space-between;
+
+    .user-con {
         display: flex;
         align-items: center;
         gap: 1rem;
-        img{
+
+        img {
             width: 80px;
             height: 80px;
-            border-radius: 50%;
             object-fit: cover;
-            border: 2px solid black;
-            padding: .2rem;
-            box-shadow: 0px 1px 17px rgba(0, 0, 0, 0.06);
+            border: 2px solid #000000;
+            border-radius: 50%;
         }
     }
 
-    .menu-items{
+    .menu-items {
         flex: 1;
         display: flex;
         flex-direction: column;
-        li{
+
+        li {
             display: grid;
             grid-template-columns: 40px auto;
             align-items: center;
-            margin: .6rem 0;
-            font-weight: 500;
+            margin: .5rem 0;
             cursor: pointer;
-            padding-left: 1rem;
-            position: relative;
-            i{
-                font-size: 1.4rem;
+
+            i {
+                font-size: 1.5rem;
             }
         }
     }
 `;
 
-export default Navigation
+export default Navigation;

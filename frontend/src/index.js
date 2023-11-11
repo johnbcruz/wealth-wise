@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import { GlobalProvider } from './context/globalContext';
 import { GlobalStyle } from './styles/GlobalStyle';
+import { GlobalProvider } from './context/globalContext';
+import App from './App';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const appElement = (
   <React.StrictMode>
     <GlobalStyle />
     <GlobalProvider>
@@ -14,3 +13,5 @@ root.render(
   </React.StrictMode>
 );
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(appElement);

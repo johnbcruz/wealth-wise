@@ -1,13 +1,21 @@
 import styled from "styled-components";
 
-export const MainLayout = styled.div`
-    padding: 2rem;
-    height: 100%;
+export const PageLayout = styled.div`
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
+`;
+
+export const UserLayout = styled.div`
+    display: flex;
+`;
+
+export const MainLayout = styled.div`
+    display: flex;
+    flex-direction: row;
+    height: 100%;
 `;
 
 export const InnerLayout = styled.div`
-    padding: 2rem 1.5rem;
+    padding: 2rem;
     width: 100%;
 `;
