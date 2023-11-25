@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { dateFormat } from '../../utils/dateFormat';
-import { calendar, comment, dollar, money, trash, book, circle } from '../../utils/Icons';
+import { book, calender, card, circle, clothing, comment, dollar, food, freelance, medical, money, piggy, stocks, takeout, trash, tv, users } from '../../utils/Icons';
 import Button from '../Button/Button';
 
 function IncomeItem({
@@ -20,9 +20,16 @@ function IncomeItem({
         switch(category) {
             case 'salary':
                 return money;
-            // TODO: Add additional cases
+            case 'freelancing':
+                return freelance
+            case 'investments':
+                return stocks;
+            case 'stocks':
+                return users;
+            case 'bank':
+                return card;
             case 'other':
-                return money;
+                return piggy;
             default:
                 return ''
         }
@@ -32,7 +39,18 @@ function IncomeItem({
         switch (category) {
             case 'education':
                 return book;
-            // TODO: Add additional cases
+            case 'groceries':
+                return food;
+            case 'health':
+                return medical;
+            case 'subscriptions':
+                return tv;
+            case 'takeout':
+                return takeout;
+            case 'clothing':
+                return clothing;
+            case 'traveling':
+                return freelance;
             case 'other':
                 return circle;
             default:
@@ -52,7 +70,7 @@ function IncomeItem({
                 <div className="inner-content">
                     <div className="text">
                         <p>{dollar} {amount}</p>
-                        <p>{calendar} {dateFormat(date)}</p>
+                        <p>{calender} {dateFormat(date)}</p>
                         <p>
                             {comment}
                             {description}

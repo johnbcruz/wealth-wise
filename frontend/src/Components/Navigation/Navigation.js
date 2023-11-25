@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import picture from '../../img/picture.png'
 import { signout } from '../../utils/Icons'
 import { menuItems } from '../../utils/menuItems'
 
 function Navigation({active, setActive}) {
+    
     return (
         <NavStyled>
+            <div className="user-con">
+                <img src={picture} alt="" />
+                <div className="text">
+                    <h2>Coco</h2>
+                    <p>Your Money</p>
+                </div>
+            </div>
             <ul className="menu-items">
-                {menuItems.map((item) => (
-                    <li
+                {menuItems.map((item) => {
+                    return <li
                         key={item.id}
                         onClick={() => setActive(item.id)}
                         className={active === item.id ? 'active': ''}
@@ -17,58 +25,90 @@ function Navigation({active, setActive}) {
                         {item.icon}
                         <span>{item.title}</span>
                     </li>
-                ))}
+                })}
             </ul>
             <div className="bottom-nav">
-                <div className="user-con">
-                    <img src={picture} alt="" />
-                    <div className="text">
-                        <h2>CoCo</h2>
-                    </div>
-                </div>
+                <li>
+                    {signout} Sign Out
+                </li>
             </div>
         </NavStyled>
     )
 }
 
 const NavStyled = styled.nav`
-    padding: 0px 8px;
-    border-right: 3px solid #000000;
+    padding: 2rem 1.5rem;
+    width: 374px;
+    height: 100%;
+    // Can add background color here
+    border: 3px solid #FFFFFF;
+    backdrop-filter: blur(4.5px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    .user-con {
+    gap: 2rem;
+    .user-con{
+        height: 100px;
         display: flex;
         align-items: center;
         gap: 1rem;
-
-        img {
+        img{
             width: 80px;
             height: 80px;
-            object-fit: cover;
-            border: 2px solid #000000;
             border-radius: 50%;
+            object-fit: cover;
+            // Can add background color here
+            border: 2px solid #FFFFFF;
+            padding: .2rem;
+            box-shadow: 0px 1px 17px rgba(0, 0, 0, 0.06);
+        }
+        h2{
+            color: rgba(34, 34, 96, 1);
+        }
+        p{
+            color: rgba(34, 34, 96, .6);
         }
     }
 
-    .menu-items {
+    .menu-items{
         flex: 1;
         display: flex;
         flex-direction: column;
-
-        li {
+        li{
             display: grid;
             grid-template-columns: 40px auto;
             align-items: center;
-            margin: .5rem 0;
+            margin: .6rem 0;
+            font-weight: 500;
             cursor: pointer;
-
-            i {
-                font-size: 1.5rem;
+            transition: all .4s ease-in-out;
+            color: rgba(34, 34, 96, .6);
+            padding-left: 1rem;
+            position: relative;
+            i{
+                color: rgba(34, 34, 96, 0.6);
+                font-size: 1.4rem;
+                transition: all .4s ease-in-out;
             }
+        }
+    }
+
+    .active{
+        color: rgba(34, 34, 96, 1) !important;
+        i{
+            color: rgba(34, 34, 96, 1) !important;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #222260;
+            border-radius: 0 10px 10px 0;
         }
     }
 `;
 
-export default Navigation;
+export default Navigation
