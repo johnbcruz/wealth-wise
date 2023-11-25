@@ -1,6 +1,6 @@
 # wealth-wise
 <!--TODO: Update readme-->
-# Installation Instructions
+## Installation Instructions
 
 1. Clone the repository
 
