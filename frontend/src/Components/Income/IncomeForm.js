@@ -44,7 +44,7 @@ function Form() {
                     type="text" 
                     value={title}
                     name={'title'} 
-                    placeholder="Title"
+                    placeholder="Salary Title"
                     onChange={handleInput('title')}
                 />
             </div>
@@ -52,14 +52,14 @@ function Form() {
                 <input value={amount}  
                     type="text" 
                     name={'amount'} 
-                    placeholder={'Amount'}
+                    placeholder={'Salary Amount'}
                     onChange={handleInput('amount')} 
                 />
             </div>
             <div className="input-control">
                 <DatePicker 
                     id='date'
-                    placeholderText='Date'
+                    placeholderText='Enter A Date'
                     selected={date}
                     dateFormat="dd/MM/yyyy"
                     onChange={(date) => {
@@ -69,9 +69,12 @@ function Form() {
             </div>
             <div className="selects input-control">
                 <select required value={category} name="category" id="category" onChange={handleInput('category')}>
-                    <option value=""  disabled >Select Category</option>
+                    <option value=""  disabled >Select Option</option>
                     <option value="salary">Salary</option>
-                    {/* TODO: Add more income options */}
+                    <option value="freelancing">Freelancing</option>
+                    <option value="investments">Investments</option>
+                    <option value="stocks">Stocks</option>
+                    <option value="bank">Bank Transfer</option>  
                     <option value="other">Other</option>  
                 </select>
             </div>
@@ -84,8 +87,8 @@ function Form() {
                     icon={plus}
                     bPad={'.8rem 1.6rem'}
                     bRad={'30px'}
-                    bg={'var(--color-accent'}
-                    color={'#000000'}
+                    bg={'#FFF'} 
+                    color={'#000'}
                 />
             </div>
         </FormStyled>
@@ -96,47 +99,47 @@ function Form() {
 const FormStyled = styled.form`
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-
-    input, textarea, select {
+    gap: 2rem;
+    input, textarea, select{
         font-family: inherit;
         font-size: inherit;
-        border: 2px solid #000000;
+        outline: none;
+        border: none;
         padding: .5rem 1rem;
+        border-radius: 5px;
+        border: 2px solid #fff;
+        background: transparent;
         resize: none;
-        color: #000;
-
-        &::placeholder {
-            color: #aaa;
+        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+        color: rgba(34, 34, 96, 0.9);
+        &::placeholder{
+            color: rgba(34, 34, 96, 0.4);
         }
     }
-
-    .input-control {
-        input {
+    .input-control{
+        input{
             width: 100%;
         }
     }
 
-    .selects {
+    .selects{
         display: flex;
         justify-content: flex-end;
-        select {
-            color: #000;
-            &:focus, &:active {
-                color: #000;
+        select{
+            color: rgba(34, 34, 96, 0.4);
+            &:focus, &:active{
+                color: rgba(34, 34, 96, 1);
             }
         }
     }
 
-    .submit-btn {
-        button {
-            background: #fff;
-            color: #000;
-            &:hover {
-                background: #eee;
+    .submit-btn{
+        button{
+            box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+            &:hover{
+                background: var(--color-green) !important;
             }
         }
     }
 `;
-
 export default Form
