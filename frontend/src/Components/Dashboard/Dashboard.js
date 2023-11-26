@@ -44,7 +44,7 @@ function Dashboard() {
                     </div>
                     <div className="history-con">
                         <History />
-                        <h2 className="salary-title">Min <span>Salary</span>Max</h2>
+                        <h2 className="salary-title">Min <span>Income</span>Max</h2>
                         <div className="salary-item">
                             <p>
                                 ${Math.min(...incomes.map(item => item.amount))}
