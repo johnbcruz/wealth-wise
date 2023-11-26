@@ -47,7 +47,7 @@ function Chart() {
                 tension: .2
             },
             {
-                label: 'Expenses',
+                label: 'Expense',
                 data: [
                     ...expenses.map((expense) => {
                         const {amount} = expense
