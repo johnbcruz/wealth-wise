@@ -1,13 +1,20 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import picture from '../../img/picture.png'
 import { signout } from '../../utils/Icons'
 import { menuItems } from '../../utils/menuItems'
 
 function Navigation({active, setActive}) {
     
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
+    };
+
+
     return (
-        <NavStyled>
+        <NavStyled isDarkMode={isDarkMode}>
             <div className="user-con">
                 <img src={picture} alt="" />
                 <div className="text">
@@ -30,6 +37,7 @@ function Navigation({active, setActive}) {
             <div className="bottom-nav">
                 <li>
                     {signout} Sign Out
+                    <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
                 </li>
             </div>
         </NavStyled>
@@ -109,6 +117,14 @@ const NavStyled = styled.nav`
             border-radius: 0 10px 10px 0;
         }
     }
+    ${({ isDarkMode }) =>
+        isDarkMode &&
+        css`
+            background-color: #111;
+            color: #fff;
+            /* Add more styles for dark mode */
+            /* Example: Update text color, background color, etc. */
+        `}
 `;
 
 export default Navigation
