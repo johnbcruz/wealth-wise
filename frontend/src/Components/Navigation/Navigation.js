@@ -19,7 +19,7 @@ function Navigation({active, setActive}) {
                 <img src={picture} alt="" />
                 <div className="text">
                     <h2>Coco</h2>
-                    <p>Your Money</p>
+                    <p>Your Dashboard</p>
                 </div>
             </div>
             <ul className="menu-items">
@@ -34,12 +34,12 @@ function Navigation({active, setActive}) {
                     </li>
                 })}
             </ul>
-            <div className="bottom-nav">
+            {/* <div className="bottom-nav">
                 <li>
                     {signout} Sign Out
                     <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
                 </li>
-            </div>
+            </div> */}
         </NavStyled>
     )
 }
