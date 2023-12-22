@@ -80,7 +80,6 @@ function IncomeItem({
                         <Button 
                             icon={trash}
                             bPad={'1rem'}
-                            bRad={'50%'}
                             bg={'var(--primary-color'}
                             color={'#fff'}
                             iColor={'#fff'}
@@ -95,10 +94,10 @@ function IncomeItem({
 }
 
 const IncomeItemStyled = styled.div`
-    // background: #FFFFFF;
+    background: #FFFFFF;
     border: 2px solid #FFFFFF;
     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 1rem;
     margin-bottom: 1rem;
     display: flex;
@@ -110,7 +109,7 @@ const IncomeItemStyled = styled.div`
         width: 80px;
         height: 80px;
         border-radius: 20px;
-        background: #F5F5F5;
+        background: #FFFFFF;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -137,7 +136,7 @@ const IncomeItemStyled = styled.div`
                 transform: translateY(-50%);
                 width: .8rem;
                 height: .8rem;
-                border-radius: 50%;
+                border-radius: 20px;
                 background: ${props => props.indicator};
             }
         }
@@ -154,8 +153,6 @@ const IncomeItemStyled = styled.div`
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
-                    color: var(--primary-color);
-                    opacity: 0.8;
                 }
             }
         }
