@@ -45,12 +45,13 @@ function Navigation({active, setActive}) {
 }
 
 const NavStyled = styled.nav`
-    padding: 2rem 1.5rem;
-    width: 374px;
+    padding: 2rem 2rem;
+    width: 300px;
     height: 100%;
-    // Can add background color here
-    border: 3px solid #FFFFFF;
+    background-color: #EDFEFD;
+    // border: 3px solid #000000;
     backdrop-filter: blur(4.5px);
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -63,9 +64,9 @@ const NavStyled = styled.nav`
         img{
             width: 80px;
             height: 80px;
-            border-radius: 50%;
+            border-radius: 20px;
             object-fit: cover;
-            // Can add background color here
+            background: #FFFFFF;
             border: 2px solid #FFFFFF;
             padding: .2rem;
             box-shadow: 0px 1px 17px rgba(0, 0, 0, 0.06);

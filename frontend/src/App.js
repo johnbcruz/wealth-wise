@@ -46,9 +46,10 @@ const AppStyled = styled.div`
   position: relative;
   main{
     flex: 1;
-    // background: ;
-    border-left: 3px solid #000000;
+    background: #EDFEFD;  // Right box color
+    // border: 3px solid #000000;
     backdrop-filter: blur(4.5px);
+    border-radius: 20px;
     overflow-x: hidden;
     &::-webkit-scrollbar{
       width: 0;
